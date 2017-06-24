@@ -107,10 +107,10 @@ var drive = google.drive({ version: 'v2', auth: oauth2Client });
  *
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
-function listFiles(res) {
+function listFiles(res, folder) {
 
   drive.files.list({
-    q: "'0B4ZEBluRJ7VuYjBfYW9KOGI5aXM' in parents and mimeType='application/vnd.google-apps.folder'"
+    q: "'"+folder+"' in parents and mimeType='application/vnd.google-apps.folder'"
   }, function(err, response) {
     if (err) {
       console.log('The API returned an error: ' + err);
@@ -172,7 +172,7 @@ function getFile(id, res) {
     }
 
     res.send(JSON.stringify(response));
-  })
+  });
 }
 
 var express = require('express');
@@ -189,9 +189,10 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
-app.get('/api/newImg', function (req, res) {
+app.get('/api/newImg/:folder', function (req, res) {
 	console.log("hit getnewImg");
-	listFiles(res);
+  console.log(req.params);
+	listFiles(res, req.params.folder);
 	console.log("sent res");
 });
 

@@ -1,12 +1,12 @@
 extends _layout.jade
 block content
 	#wrap.container
-		//- a#start-game START
-		#image-container.container
+		a#start-game START
+		#image-container.container.hidden
 			#loading-wrapper.hidden
 				#loading
 			img(src="", alt="img failed to load")
-		#input-container.container.text-center
+		#input-container.container.text-center.hidden
 			input#answer-box(type='text', placeholder='Answer')
 			#controls
 				a.fa.fa-eye#show-ans
@@ -14,7 +14,7 @@ block content
 				a.fa.fa-info#help-button
 			h4#answer.hidden
 			#result.hidden(role="alert") Correct!
-		#stats.container
+		#stats.container.hidden
 			ul
 				li
 					.fa.fa-check
@@ -25,13 +25,16 @@ block content
 				span#divider
 				li
 					span#percent 0% 
-		//- #options.container
-		//- 	.checkbox
-		//- 		input#sci-names(type="checkbox",checked="true")
-		//- 		| Scientific Names
-		//- 	.checkbox
-		//- 		input#common-names(type="checkbox",checked="true")
-		//- 		| Common Names
+		#options.container
+			.checkbox
+				input#sci-names(type="radio", name="event", checked=true, value='0B4ZEBluRJ7VuYjBfYW9KOGI5aXM')
+				| Microbe Mission
+			.checkbox
+				input#common-names(type="radio", name="event", value='0B4ZEBluRJ7VuV2U1RTJ4aU5oRjQ')
+				| Rocks & Minerals
+			.checkbox
+				input#common-names(type="radio", name="event", value='0B4ZEBluRJ7VudzVvQUZ6WWpDRzA')
+				| Herpetology
 	.modal.hidden
 		.modal-container
 			h1 Instructions

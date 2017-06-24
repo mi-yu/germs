@@ -3,6 +3,7 @@ $(document).ready(function() {
 	var total = 0;
 	var currIndex = 0;
 	var currFolder = "";
+	var gameType="";
 
 	var getNewImg = function() {
 		$("#answer").addClass("hidden");
@@ -10,7 +11,7 @@ $(document).ready(function() {
 		// currFolder = folderNames[tempIndex];
 		// currIndex = Math.floor(Math.random()*10);
 		// currCommonName = speciesNames[tempIndex];
-		$.get('/api/newImg', function (data) {
+		$.get('/api/newImg/'+gameType, function (data) {
 			var newImg = JSON.parse(data);
 			console.log(newImg);
 			currFolder=newImg.title;
@@ -30,7 +31,7 @@ $(document).ready(function() {
 	}
 	
 	//initial image
-	getNewImg();
+	//getNewImg();
 
 	var result = $("#result");
 	var validate = function() {
@@ -73,15 +74,17 @@ $(document).ready(function() {
 		$("#percent").text(Math.round(numCorrect/total*100)+"%");
 	}
 
-	// $("#start-game").click( function() {
-	// 	$(this).hide();
-	// 	$("#options, #instructions-container").hide();
-	// 	$("#image-container, #input-container, #stats").removeClass("hidden");
-	// 	getNewImg();
-	// })
+	$("#start-game").click( function() {
+		$(this).addClass("hidden");
+		$("#options, #instructions-container").addClass("hidden");
+		$("#image-container, #input-container, #stats").removeClass("hidden");
+		gameType = $("input:checked").val();
+		console.log(gameType);
+		getNewImg(gameType);
+	})
 	$("#skip").click( function() {
 		incrementCount(false);
-		getNewImg();
+		getNewImg(gameType);
 	})
 	$("#show-ans").click( function() {
 		updateAns();
