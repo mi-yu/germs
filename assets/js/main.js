@@ -79,7 +79,7 @@ $(document).ready(function() {
 		$("#options, #instructions-container").addClass("hidden");
 		$("#image-container, #input-container, #stats").removeClass("hidden");
 		gameType = $("input:checked").val();
-		console.log(gameType);
+		$("#folder-link").attr("href","https://drive.google.com/drive/folders/"+gameType);
 		getNewImg(gameType);
 	})
 	$("#skip").click( function() {
