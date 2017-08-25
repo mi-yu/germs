@@ -1,7 +1,7 @@
 {
-  "name": "herp",
+  "name": "idagmes",
   "version": "1.0.0",
-  "description": "Herpetology ID Game",
+  "description": "Science Olympiad ID Games",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
