@@ -10,20 +10,21 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
-    "google-auth-library": "^0.9.8",
-    "googleapis": "^13.0.0",
-    "jade": "^1.11.0"
+    "google-auth-library": "^0.11.0",
+    "googleapis": "^21.3.0",
+    "pug": "^2.0.0-rc.4"
   },
   "devDependencies": {
     "browser-sync": "^2.16.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-cssmin": "^0.1.7",
-    "gulp-filter": "^4.0.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-filter": "^5.0.1",
     "gulp-imagemin": "^3.0.3",
     "gulp-jsmin": "^0.1.5",
+    "gulp-live-server": "0.0.31",
+    "gulp-livereload": "^3.8.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-uncss": "^1.0.6"
+    "gulp-sass": "^3.1.0"
   }
 }

@@ -1,6 +1,18 @@
-extends _layout.jade
+extends partials/_layout
 block content
 	#wrap.container
+		img#logo(src='/static/imgs/logo.svg')
+		h1.text-center#intro Select an event:
+		#options.container
+			//- .checkbox
+			//- 	input#sci-names(type="radio", name="event", checked=true, value='0B4ZEBluRJ7VuYjBfYW9KOGI5aXM')
+			//- 	| Microbe Mission
+			.checkbox
+				input#common-names(type="radio", name="event", value='0B4ZEBluRJ7VuV2U1RTJ4aU5oRjQ', checked=true)
+				| Rocks & Minerals
+			.checkbox
+				input#common-names(type="radio", name="event", value='0B4ZEBluRJ7VudzVvQUZ6WWpDRzA')
+				| Herpetology
 		a#start-game START
 		#image-container.container.hidden
 			#loading-wrapper.hidden
@@ -8,35 +20,25 @@ block content
 			img(src="", alt="img failed to load")
 		#input-container.container.text-center.hidden
 			input#answer-box(type='text', placeholder='Answer')
-			#controls
-				a.fa.fa-eye#show-ans
-				a.fa.fa-angle-right#skip
-				a.fa.fa-info#help-button
 			h4#answer.hidden
 			#result.hidden(role="alert") Correct!
-		#stats.container.hidden
-			ul
-				li
-					.fa.fa-check
-					span#correct 0
-				li
-					.fa.fa-times
-					span#wrong 0
-				span#divider
-				li
-					span#percent 0% 
-		#options.container
-			//- .checkbox
-			//- 	input#sci-names(type="radio", name="event", checked=true, value='0B4ZEBluRJ7VuYjBfYW9KOGI5aXM')
-			//- 	| Microbe Mission
-			.checkbox
-				input#common-names(type="radio", name="event", value='0B4ZEBluRJ7VuV2U1RTJ4aU5oRjQ')
-				| Rocks & Minerals
-			.checkbox
-				input#common-names(type="radio", name="event", value='0B4ZEBluRJ7VudzVvQUZ6WWpDRzA')
-				| Herpetology
-	.modal.hidden
-		.modal-container
+		#controls.hidden.flex.center-both
+			a.fa.fa-eye#show-ans.control-options
+			a.fa.fa-angle-right#skip.control-options
+			a.fa.fa-info#help-button.control-options
+			#stats.control-options
+				ul.flex.center-both
+					li
+						.fa.fa-check
+						span#correct 0
+					li
+						.fa.fa-times
+						span#wrong 0
+					span#divider
+					li
+						span#percent 0%
+	.modal.hidden.flex.cl.center-both
+		.modal-container.flex.cl.center-both
 			h1 Instructions
 			.container
 				p Select what you want to practice (scientific names, common names, or both), and click 'Start Game'.
@@ -47,6 +49,6 @@ block content
 					a.link#folder-link(href="!", target="_") here.
 				p If you find this tool useful, please consider donating a few dollars to my new laptop fund! 💕
 				#modal-buttons
-					a#donate-button(href="http://paypal.me/myu0", target="_") DONATE
-					a.fa.fa-github#gh-button(href="https://github.com/mi-yu/invasives2", target="_")
+					a#donate-button(href="http://paypal.me/myu0", target="_", rel='noopener noreferrer') DONATE
+					a.fa.fa-github#gh-button(href="https://github.com/mi-yu/invasives2", target="_", rel='noopener noreferrer')
 					a#close-modal CLOSE

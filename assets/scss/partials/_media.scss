@@ -1,0 +1,16 @@
+@media only screen and (max-device-width: 667px)  { 
+	#image-container {
+		width: 90%;
+		img {
+			width: 90%;
+		}
+	}
+
+	.input-group input {
+		width: 100%;
+	}
+
+	.modal-container {
+		width: 100%;
+	}
+}

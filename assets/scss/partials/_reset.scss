@@ -1,0 +1,66 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	background: $cloud;
+}
+
+// Helper classes
+
+.hidden {
+	display: none !important;
+}
+
+#wrap {
+	height: 100vh;
+}
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.flex {
+	display: flex;
+}
+
+.cl {
+	flex-direction: column;
+}
+
+.center-both {
+	align-items: center;
+	justify-content: center;
+}
+
+// Button and link styles
+
+button, input, textarea, a {
+	font-family: 'Roboto', sans-serif;
+	font-size: 0.8rem;
+}
+
+a, a:visited, a:link {
+	background: none;
+	padding: 15px;
+	margin: 0 10px 0 10px;
+	cursor: pointer;
+	text-decoration: none;
+	color: white;
+	border-radius: 2px;
+	text-align: center;
+}
+
+a.link {
+	font-size: inherit;
+	padding: 0;
+	margin: 0;
+	color: orange;
+	display: inline-block;
+}
