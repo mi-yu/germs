@@ -1,8 +1,8 @@
-extends partials/_layout
+extends partials/layouts/_layout
 block content
 	#wrap.container
 		img#logo(src='/static/imgs/logo.svg')
-		h1.text-center#intro Select an event:
+		h3.text-center#intro Select an event:
 		#options.container
 			//- .checkbox
 			//- 	input#sci-names(type="radio", name="event", checked=true, value='0B4ZEBluRJ7VuYjBfYW9KOGI5aXM')
@@ -37,18 +37,4 @@ block content
 					span#divider
 					li
 						span#percent 0%
-	.modal.hidden.flex.cl.center-both
-		.modal-container.flex.cl.center-both
-			h1 Instructions
-			.container
-				p Select what you want to practice (scientific names, common names, or both), and click 'Start Game'.
-				p Type your answer into the input box. You do not need to capitalize, but spelling counts! Submit by pressing the 'Enter' key. 
-				p Your current correct/incorrect record is displayed at the bottom. If you get stuck, the eye icon will display the correct common/scientific name. Clicking the arrow will go on to the next image without displaying the answer, and will count as a wrong answer. Have fun!
-				p 
-					| To contribute images, upload an image to its respective folder 
-					a.link#folder-link(href="!", target="_") here.
-				p If you find this tool useful, please consider donating a few dollars to my new laptop fund! 💕
-				#modal-buttons
-					a#donate-button(href="http://paypal.me/myu0", target="_", rel='noopener noreferrer') DONATE
-					a.fa.fa-github#gh-button(href="https://github.com/mi-yu/invasives2", target="_", rel='noopener noreferrer')
-					a#close-modal CLOSE
+	include partials/_modal
